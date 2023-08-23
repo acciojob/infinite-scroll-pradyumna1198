@@ -1,31 +1,22 @@
 //your code here!
+let list = document.getElementById("infi-list");
+console.log(list);
 
-document.addEventListener(function() {
-	const infi = document.getElementById("infi-list");
+for(let i=1;i<=10;i++){
+	list.innerHTML += `<li>Item ${i}</li>`
+}
+let n=10;
 
-	for(let i=1;i<=10;i++){
-		const listItem =   document.createElement("li");
-		listItem.textContent = `Item ${i}`;
-		infi.appendChild(listItem);
+list.addEventListener("scroll" ()=>{
+
+	if(list.scrollheight-list.scrollTop-list.clientHeight <1){
+		list.innerHTML += `
+	<li>Item ${n+1}</li>
+	 <li>Item ${n+2}</li>
+	`
+		n+=2;
 	}
-
-	function addItem(){
-		for(let i=1;i<=2;i++){
-			const listItem = document.createElement("li");
-			listItem.textContent = `Item ${i}`;
-			infi.appendChild(listItem);
-		}
-	}
-
-	infi.addEventListener(function(){
-		const scrolltop = infi.scrollTop;
-		const scrollHeight= infi.scrollHeight;
-		const clientHeight = infi.clientHeight;
+})
 
 
-		if(scrolltop + clientHeight >= scrollHeight){
-			addItem();
-		}
-	});
-});
 
