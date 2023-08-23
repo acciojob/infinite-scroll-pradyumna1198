@@ -24,7 +24,7 @@ document.addEventListener(function() {
 
 
 		if(scrolltop + clientHeight >= scrollHeight){
-			addMoreItems();
+			addItem();
 		}
 	});
 });
